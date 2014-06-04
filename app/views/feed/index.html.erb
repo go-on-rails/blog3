@@ -1,0 +1,9 @@
+<h1>Feed</h1>
+<div class="clear-fix" style="height: 50px">
+    <%= link_to 'New',
+            new_post_path,
+            :class => 'btn btn-default' %> </br>
+</div>
+<% @posts.each do |post| %>
+  <%= render post %>
+<% end %>

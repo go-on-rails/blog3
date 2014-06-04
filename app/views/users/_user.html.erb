@@ -1,0 +1,8 @@
+<dl class="dl-horizontal">
+  <dt><strong>Name: </strong></dt>
+  <dd><%= @user.username %></dd>
+  <dt><strong>About:</strong></dt>
+  <dd><%= @user.about %></dd>
+  <dt><strong>Last sign in:</strong></dt>
+  <dd><%= @user.last_sign_in_at.strftime "%e %b %Y %T" %></dd>
+</dl>

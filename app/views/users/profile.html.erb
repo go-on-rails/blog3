@@ -1,0 +1,4 @@
+<h1>Profile</h1>
+<%= render @user %>
+<%= link_to 'Back', url_for(:back), :class => 'btn btn-default'  %>
+<%= link_to 'Logout', logout_path, :method => :delete, :class => "btn btn-danger" %>

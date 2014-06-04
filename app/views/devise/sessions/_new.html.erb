@@ -1,0 +1,32 @@
+    <div class="panel panel-default">
+      <div class="panel-body clear-fix">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="control-group form-group">
+            <%= f.label :email, :class => 'control-label' %><br/>
+            <%= f.email_field :email, autofocus: true, :class => 'text_field form-control' %>
+          </div>
+
+          <div class="control-group form-group">
+            <%= f.label :password, :class => 'control-label' %><br />
+            <%= f.password_field :password, autocomplete: "off", :class => 'password_field form-control' %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div>
+              <%= f.check_box :remember_me %> 
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="control-group form-group sign-in" style="text-align:center">
+            <%= f.submit "Sign in", :class => 'btn btn-primary' %>
+            <%= link_to image_tag("icons/vk.png"), user_omniauth_authorize_path(:vkontakte) %>
+            <%= link_to image_tag("icons/facebook.png"), user_omniauth_authorize_path(:facebook) %>
+          </div>
+        <% end %>
+        <div style="text-align:center">
+          <%= link_to "Forgot your password?", new_password_path(User) %>
+          <%= link_to "Sign up", new_registration_path(User) %>
+        </div>
+      </div>
+    </div>

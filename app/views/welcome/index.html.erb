@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <div style="text-align: center">
+    <h1>Welcome!</h1>
+    <p class="lead">
+      <% if user_signed_in? %>
+        <%= link_to "To feed", feed_path %>
+      <% else %>
+        You must 
+        <div width="300px" class="clear-fix">
+          <%= link_to "Sign In", login_path, :class => "btn btn-success float-left" %>
+          or
+          <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success float-right" %>
+        </div>
+      <% end %>
+    </p>
+    </div>
+</div>
+
+<div  style="width:90px; margin:0 auto">
+  Online
+  <span class="badge pull-right online-counter"> <%= count_of_online %></span>
+</div>

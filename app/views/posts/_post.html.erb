@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="title"><b><%=post.title%></b></div>
+  </div>
+  <div class="panel-body">
+    <p class="description"><%=post.description%></p>
+  </div>
+  <div class="panel-footer clearfix">
+    <div class="date pull-right"><%=post.created_at.strftime "%e %b %Y %T "%></div>
+    <div class="author pull-left"><%= link_to post.user.username, url_for(post.user) %></div>
+  </div>
+</div>
